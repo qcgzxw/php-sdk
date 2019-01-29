@@ -25,6 +25,12 @@ final class Client
         return self::sendRequest($request);
     }
 
+    public static function put($url, $body, array $headers = array())
+    {
+        $request = new Request('PUT', $url, $headers, $body);
+        return self::sendRequest($request);
+    }
+
     public static function multipartPost(
         $url,
         $fields,
